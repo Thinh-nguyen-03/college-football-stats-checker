@@ -24,3 +24,14 @@ async def get_player_stats(session, player_id, year):
     url = f"{API_BASE_URL}/stats/player/season"
     params = {"year": year, "playerId": player_id}
     return await fetch_data(session, url, params)
+
+async def get_team_schedule(session, team, year):
+    url = f"{API_BASE_URL}/games"
+    params = {"year": year, "team": team}
+    return await fetch_data(session, url, params)
+
+async def get_team_stats(session, team, year):
+    url = f"{API_BASE_URL}/stats/season"
+    params = {"year": year, "team": team}
+    return await fetch_data(session, url, params)
+
